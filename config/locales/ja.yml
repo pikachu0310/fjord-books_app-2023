@@ -181,3 +181,13 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  views:
+    common:
+      show: "%{name}の詳細を見る"
+      edit: "%{name}を編集する"
+      destroy: "%{name}を削除しますか？"
+      new: "新規%{name}を登録"
+      back: "%{name}一覧に戻る"
+      title_index: "%{name}一覧"
+      title_new: "新規%{name}の登録"
+      title_edit: "%{name}の編集"

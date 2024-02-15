@@ -215,3 +215,13 @@ en:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
+  views:
+    common:
+      show: "View details of %{name}"
+      edit: "Edit %{name}"
+      destroy: "Are you sure you want to delete %{name}?"
+      new: "Register a new %{name}"
+      back: "Back to %{name} list"
+      title_index: "%{name} List"
+      title_new: "Register New %{name}"
+      title_edit: "Edit %{name}"
