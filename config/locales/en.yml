@@ -225,3 +225,6 @@ en:
       title_index: "%{name} List"
       title_new: "Register New %{name}"
       title_edit: "Edit %{name}"
+      notice_create: "%{name} has been created."
+      notice_update: "%{name} has been updated."
+      notice_destroy: "%{name} has been deleted."
