@@ -219,7 +219,7 @@ en:
     common:
       show: "View details of %{name}"
       edit: "Edit %{name}"
-      destroy: "Are you sure you want to delete %{name}?"
+      destroy: "Delete %{name}"
       new: "Register a new %{name}"
       back: "Back to %{name} list"
       title_index: "%{name} List"
