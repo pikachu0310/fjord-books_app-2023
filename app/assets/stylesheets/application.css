@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+/* ナビゲーションバーのスタイル */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333; /* リッチな黒色 */
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    color: white; /* リンクのテキスト色を白に */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* リンクにマウスオーバーしたときのスタイル */
+nav ul li a:hover {
+    background-color: #111; /* 濃い黒色 */
+}
+
