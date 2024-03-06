@@ -48,6 +48,10 @@ User.destroy_all
   User.create!(
     email: "sample-#{n}@example.com",
     password: 'password',
+    postal_code: Faker::Address.postcode,
+    address: Faker::Address.city,
+    introduction: 'よろしくお願いします。',
+    name: Faker::Name.name
   )
 end
 
