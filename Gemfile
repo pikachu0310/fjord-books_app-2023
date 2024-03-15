@@ -69,6 +69,7 @@ group :development do
   gem 'faker'
   gem 'i18n_generators'
   gem 'kaminari'
+  gem 'kaminari-i18n'
   # 以下のPRがリリースされたら最新のrubocopを使うようにする
   # https://github.com/fjordllc/rubocop-fjord/pull/16
   gem 'rubocop', '~> 1.45.1', require: false
