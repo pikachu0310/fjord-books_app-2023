@@ -1,0 +1,18 @@
+<strong><%= Comment.model_name.human %>:</strong>
+<% if (comments = commentable.comments.order(:id).includes(:user).presence) %>
+  <ul>
+    <% comments.each do |comment| %>
+      <li>
+        <%= comment.content %>
+        <small>
+          (by <%= comment.user.name %>)
+          <% if comment.user == current_user %>
+            <%= button_to t('.delete'), [comment], method: :delete, data: { turbo_confirm: t('views.common.delete_confirm') } %>
+          <% end %>
+        </small>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  (<%= t('.no_comments') %>) (i18n TODO)
+<% end %>

@@ -1,0 +1,12 @@
+<div class="comments-container">
+  <%= form_with(model: report.comments.new, url: create_reports_comment_report_path(report), local: true) do |form| %>
+    <div>
+      <%= form.label :content, style: "display: block" %>
+      <%= form.text_field :content %>
+    </div>
+
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>
