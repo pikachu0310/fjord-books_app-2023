@@ -2,13 +2,13 @@
 <% if (comments = commentable.comments.order(:id).includes(:user).presence) %>
   <ul>
     <% comments.each do |comment| %>
-      <li>
+      <li id="comment_<%= comment.id %>" >
         <%= comment.content %>
         <small>
           (by <%= comment.user.name %>)
           <% if comment.user == current_user %>
-            <%= button_to t('.delete'), [comment], method: :delete, data: { turbo_confirm: t('views.common.delete_confirm') } %>
-          <% end %>
+            <%= button_to t('.delete'), comment, method: :delete, data: { turbo_confirm: t('views.common.delete_confirm') } %>
+        <% end %>
         </small>
       </li>
     <% end %>
