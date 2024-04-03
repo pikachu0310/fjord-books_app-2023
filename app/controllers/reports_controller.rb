@@ -24,14 +24,10 @@ class ReportsController < ApplicationController
   def create
     @report = current_user.reports.build(report_params)
 
-    respond_to do |format|
-      if @report.save
-        format.html { redirect_to report_url(@report), notice: 'Report was successfully created.' }
-        format.json { render :show, status: :created, location: @report }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @report.errors, status: :unprocessable_entity }
-      end
+    if @report.save
+      redirect_to report_url(@report), notice: 'Report was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
