@@ -33,6 +33,7 @@ class ReportsController < ApplicationController
 
   # PATCH/PUT /reports/1 or /reports/1.json
   def update
+    redirect_to report_url(@report), alert: 'You are not authorized to update this report.' if @report.user != current_user
     respond_to do |format|
       if @report.update(report_params)
         format.html { redirect_to report_url(@report), notice: 'Report was successfully updated.' }
