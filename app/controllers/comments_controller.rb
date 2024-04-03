@@ -19,28 +19,14 @@ class CommentsController < ApplicationController
   # GET /comments/1/edit
   def edit; end
 
-  def create_books_comment
-    book = Book.find(params[:id])
-    @comment = book.comments.build(comment_params)
+  # POST /comments or /comments.json
+  def create_comment
+    commentable_type = params[:comment][:commentable_type]
+    commentable_id = params[:comment][:commentable_id]
+    commentable_class = commentable_type.constantize
+    commentable = commentable_class.find(commentable_id)
+    @comment = commentable.comments.build(comment_params)
     @comment.user = current_user
-    @comment.commentable = book
-
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to @comment.commentable, notice: 'Comment was successfully created.' }
-        format.json { render :show, status: :created, location: @comment }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  def create_reports_comment
-    report = Report.find(params[:id])
-    @comment = report.comments.build(comment_params)
-    @comment.user = current_user
-    @comment.commentable = report
 
     respond_to do |format|
       if @comment.save

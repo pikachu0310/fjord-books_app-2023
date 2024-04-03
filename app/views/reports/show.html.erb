@@ -5,7 +5,7 @@
 </div>
 
 <%= render 'comments/comments', commentable: @report %>
-<%= render 'comments/report_form', report: @report %>
+<%= render 'comments/form', commentable: @report %>
 
 <nav class="page-nav">
   <% if @report.editable_by?(current_user) %>
