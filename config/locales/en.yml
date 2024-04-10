@@ -244,3 +244,7 @@ en:
     registrations:
       edit:
         title: "Edit account"
+
+  reports:
+    errors:
+      prohibited: "%{count} error prohibited this report from being saved:"

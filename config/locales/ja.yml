@@ -216,3 +216,7 @@ ja:
     registrations:
       edit:
         title: "アカウント編集"
+
+  reports:
+    errors:
+      prohibited: "このレポートの保存を妨げるエラーが%{count}件あります："
