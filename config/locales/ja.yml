@@ -1,5 +1,10 @@
 ---
 ja:
+  nav:
+    books: "本の一覧"
+    users: "ユーザーの一覧"
+    my_page: "マイページ"
+    logout: "ログアウト"
   activerecord:
     errors:
       messages:
