@@ -5,3 +5,5 @@
     <li><%= link_to user.name, user_path(user) %></li>
   <% end %>
 </ul>
+
+<%= paginate @users, theme: 'twitter-bootstrap-4' %>
