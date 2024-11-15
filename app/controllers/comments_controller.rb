@@ -24,33 +24,25 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
-      redirect_to @comment.commentable, notice: 'Comment was successfully created.'
+      redirect_to @comment.commentable, notice: t('comments.created')
     else
-      render :new, status: :unprocessable_entity
+      redirect_to request.referer || root_path, alert: t('comments.creation_failed')
     end
   end
 
   # PATCH/PUT /comments/1 or /comments/1.json
   def update
-    respond_to do |format|
-      if @comment.update(comment_params)
-        format.html { redirect_to comment_url(@comment), notice: 'Comment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @comment }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
+    if @comment.update(comment_params)
+      redirect_to comment_url(@comment), notice: t('comments.updated')
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
   # DELETE /comments/1 or /comments/1.json
   def destroy
     @comment.destroy
-
-    respond_to do |format|
-      format.turbo_stream
-      format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
-    end
+    redirect_to comments_url, notice: t('comments.destroyed')
   end
 
   private
