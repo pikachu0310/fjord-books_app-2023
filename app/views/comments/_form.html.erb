@@ -1,0 +1,15 @@
+<div class="comments-container">
+  <%= form_with(model: [commentable, Comment.new], url: comments_create_comment_path, local: true) do |form| %>
+    <%= form.hidden_field :commentable_type, value: commentable.class.name %>
+    <%= form.hidden_field :commentable_id, value: commentable.id %>
+
+    <div>
+      <%= form.label :content, style: "display: block" %>
+      <%= form.text_field :content %>
+    </div>
+
+    <div>
+      <%= form.submit "保存する" %>
+    </div>
+  <% end %>
+</div>

@@ -3,6 +3,7 @@ ja:
     models:
       book: 本
       user: ユーザ
+      report: 日報
 
     attributes:
       book:
@@ -10,9 +11,22 @@ ja:
         memo: メモ
         picture: 画像
         title: タイトル
+
       user:
         name: 氏名
         postal_code: 郵便番号
         address: 住所
         self_introduction: 自己紹介文
         avatar: ユーザ画像
+        avatar_attachment: :activerecord.models.avatar_attachment  #g
+        avatar_blob: :activerecord.models.avatar_blob  #g
+        email: Eメール  #g
+        encrypted_password: 暗号化パスワード  #g
+        remember_created_at: ログイン記憶時刻  #g
+        reset_password_sent_at: パスワードリセット送信時刻  #g
+        reset_password_token: パスワードリセット用トークン  #g
+
+      report:
+        content: コンテンツ  #g
+        title: タイトル  #g
+        user: ユーザ  #g
